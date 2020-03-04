@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AffiliateMarketing.Areas.Publisher.Controllers
+namespace AffiliateMarketing.Areas.Admin.Controllers
 {
-    [Area("Publisher")]
-    [Authorize(Roles = "Publisher")]
-    public class HomeeController : Controller
+    [Area("Admin")]
+    public class HomeController : Controller
     {
         public IActionResult Index()
         {

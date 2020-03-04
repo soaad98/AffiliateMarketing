@@ -17,6 +17,13 @@
 
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Marchant\Controllers\" />
+    <Folder Include="Areas\Marchant\Data\" />
+    <Folder Include="Areas\Marchant\Models\" />
+    <Folder Include="Areas\Marchant\Views\" />
     <Folder Include="Areas\Publisher\Data\" />
     <Folder Include="Areas\Publisher\Models\" />
   </ItemGroup>

@@ -51,19 +51,20 @@ namespace AffiliateMarketing.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    var user = await _userManager.FindByNameAsync(model.Username);
+                    if(await _userManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        return Redirect("/Admin");
+                    }
+                   else if (await _userManager.IsInRoleAsync(user, "Publisher"))
+                    {
+                        return Redirect("/Publisher");
+                    }
+                    else if (await _userManager.IsInRoleAsync(user, "Marchant"))
+                    {
+                        return Redirect("/Marchant");
+                    }
 
-                    if (User.IsInRole("Admin"))
-                    {
-                        Redirect("/Admin");
-                    }
-                    else if (User.IsInRole("Marchant"))
-                    {
-                        Redirect("/Marchant");
-                    }
-                    else if (User.IsInRole("Publisher"))
-                    {
-                        Redirect("/Publisher/Homee/Index");
-                    }
                 }
                 //if (result.IsLockedOut)
                 //{
@@ -81,15 +82,14 @@ namespace AffiliateMarketing.Controllers
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult PubRegister()
         {
-            //            if (User.IsInRole("Marchant"))
-            //{
-            //    Redirect("/Marchant");
-            //}
-            //else if (User.IsInRole("Publisher"))
-            //{
+            return View();
+        }
 
+        [HttpGet]
+        public IActionResult MarRegister()
+        {
             return View();
         }
 
@@ -131,18 +131,24 @@ namespace AffiliateMarketing.Controllers
                     await _userManager.AddToRoleAsync(user, "Publisher");
                     await _signInManager.SignInAsync(user, isPersistent: false);
 
-                    Redirect("/Publisher/Homee/Index");
+                   return Redirect("/Publisher");
                 }
                 AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
-            return RedirectToAction("Register");
+            return View(model);
 
         }
 
         [HttpPost]
         public IActionResult MarRegister(MarRegisterViewModel model)
+        {
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult AccessDenied()
         {
             return View();
         }
