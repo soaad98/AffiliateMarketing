@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AffiliateMarketing.Models.CustomAttribute
+namespace AffiliateMarketing.Models
 {
     public class UserNameAttribute : ValidationAttribute
     {

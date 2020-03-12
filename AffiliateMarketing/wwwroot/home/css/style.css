@@ -1,0 +1,242 @@
+.btnSignUp{
+  background-color: #397BA7; 
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  font-size: 20px;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-right: 10px;
+  cursor: pointer;
+  float: left;
+   font-weight: 500;
+    /*width: 100%;
+    margin-bottom: 10px*/
+   
+}
+
+/*
+.btnSignUp:hover {
+    background-color: white;
+    border: white;
+    color: #01568F;
+ 
+}*/
+
+
+.btnSignUp span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btnSignUp span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btnSignUp:hover span {
+  padding-right: 25px;
+}
+
+.btnSignUp:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+/*
+.btnSignIn{
+
+ 
+}
+
+
+.btnSignIn:hover {
+    background-color:#397BA7;
+    border:white;
+    color: white;
+}
+*/
+
+.btnSignIn {
+  background-color: white; 
+  border: #01568F;
+  color: #01568F;
+  padding: 15px 60px;
+  font-size: 18px;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-right: 10px;
+  cursor: pointer;
+  float: left;
+ font-weight: 500;
+   /* width: 100% */
+}
+
+.btnSignIn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btnSignIn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btnSignIn:hover span {
+  padding-right: 25px;
+}
+
+.btnSignIn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.images{
+    width: 100%;
+    height: 300px;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.fa-spa , .fa-think-peaks , .fa-chart-pie{
+    border: 0px solid #fff;
+    color: #01568F;
+ font-size:80px;
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 50%;
+     box-shadow: 0px 4px 18px #aaaaaa;
+  }
+
+.fa-spa:hover,  .fa-think-peaks:hover , .fa-chart-pie:hover {
+     border: 1px solid #01568F;
+      cursor: pointer;
+    
+  
+}
+.title{
+    color: #1c1c1c;
+}
+
+.title:hover{
+    cursor: pointer;
+    color: #01568F
+    
+}
+
+
+.controls-arrows{
+    justify-content: center;
+}
+
+.fa-chevron-circle-left, .fa-chevron-circle-right{
+    margin: 10px;
+  color: #01568F;
+  font-size: 40px;
+  cursor: pointer;
+   font-weight: 500;
+    margin-bottom: 20px
+    
+}
+
+
+.fa-chevron-circle-right:hover, .fa-chevron-circle-left:hover {
+     font-size: 43px;
+    color:#397BA7 
+   
+}
+
+.card-text, .card-title{
+    text-align: center
+}
+
+.read-more{
+ background-color:#01568F; 
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  font-size: 16px;
+  border-radius: 50px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  cursor: pointer;
+   font-weight: 500;
+}
+
+
+.read-more:hover{
+    font-weight: 700;
+ 
+}
+
+
+.card:hover{
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+      cursor: pointer;
+}
+
+
+.footer1{
+    background: #01568F;
+}
+
+
+
+a{
+    color: white
+}
+
+a:hover, footer .fab:hover{
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+footer .fab:hover{
+   
+    font-size: 30px;
+  
+}
+
+footer{
+    background-color: #01568F;
+        margin-top: 50px;
+  
+}
+
+.footer-text{
+    color: white;
+    margin-bottom: 20px
+}
+
+
+
+footer .fab{
+    color: white
+}
+
+.footer-copyright{
+  color: rgba(255,255,255,0.5);
+ background-color: #033658
+}
+
+

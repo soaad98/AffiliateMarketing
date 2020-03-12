@@ -7,25 +7,22 @@
 
 
   <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="4.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TeamFoundationServer.ExtendedClient" Version="15.131.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\" />
-    <Folder Include="Areas\Marchant\Controllers\" />
-    <Folder Include="Areas\Marchant\Data\" />
-    <Folder Include="Areas\Marchant\Models\" />
-    <Folder Include="Areas\Marchant\Views\" />
-    <Folder Include="Areas\Publisher\Data\" />
-    <Folder Include="Areas\Publisher\Models\" />
+    <Folder Include="wwwroot\CampaignUploads\" />
   </ItemGroup>
 
 </Project>

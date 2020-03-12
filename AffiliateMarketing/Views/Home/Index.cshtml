@@ -1,5 +1,328 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "_MainLayout";
 }
 
-<h1>Hello World</h1>
+
+<div class="view"
+     style="background-image: url('/home/img/bg.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 500px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s"
+                 style="color: white;">
+                <h1 class="h1-responsive font-weight-bold mt-sm-5">Affiliate Marketing</h1>
+                <hr class="hr-light">
+                <br />
+
+                <h6 class="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt
+                    dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae
+                    iste.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt
+                    dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae
+                    iste.
+                </h6>
+                <br />
+
+                @*<partial name="_MainButton" />*@
+
+                <!--               <button type="button" class= "btnSignUp"><span>Sign up</span></button>-->
+                <button type="button" class="btnSignIn" onclick="window.location='/Account/Login';"><span><strong>Sign in</strong></span></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mx-1">
+        <!--Grid column-->
+        <div class="col-lg-4 mb-4">
+            <div class="text-black text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                <div>
+                    <i class="fas fa-spa"></i>
+                    <h4 class="title font-weight-bold"><strong>This is the title</strong></h4>
+                    <p class="pb-3" style="color: #1c1c1c;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
+                        fugiat, laboriom, voluptatem,
+                        optio vero odio nam sit officia accusamus minus error!
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <!--Grid column-->
+        <div class="col-lg-4 mb-4">
+            <div class="text-black text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                <div>
+                    <i class="fab fa-think-peaks"></i>
+                    <h4 class="title font-weight-bold"><strong>This is the title</strong></h4>
+                    <p class="pb-3" style="color: #1c1c1c;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
+                        fugiat, labor iosam, voluptatem,
+                        optio vero odio nam sit officia accusamus minus error!
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-4 mb-4">
+            <div class="text-black text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                <div>
+                    <i class="fas fa-chart-pie"></i>
+                    <h4 class="title font-weight-bold"><strong>This is the title</strong></h4>
+                    <p class="pb-3" style="color: #1c1c1c;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
+                        fugiat, labor iosam, voluptatem,
+                        optio vero odio nam sit officia accusamus minus error!
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+
+            <!--Carousel Wrapper-->
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                <!--Controls-->
+                <div class="row align-items-center justify-content-center">
+                    <a class="btn-floating" href="#multi-item-example" data-slide="prev">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </a>
+                    <a class="btn-floating" href="#multi-item-example" data-slide="next">
+                        <i class="fas fa-chevron-circle-right"></i>
+                    </a>
+                </div>
+
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+
+                    <!--First slide-->
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/.First slide-->
+                    <!--Second slide-->
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/.Second slide-->
+                    <!--Third slide-->
+                    <div class="carousel-item">
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card mb-2 ">
+                                    <img class="card-img-top"
+                                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title font-weight-bold"><strong>Card title</strong></h4>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the
+                                            card's content.
+                                        </p>
+                                        <div class="text-center">
+                                            <button type="button" class="read-more"><span>Read More</span></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.Third slide-->
+
+                </div>
+                <!--/.Slides-->
+
+            </div>
+            <!--/.Carousel Wrapper-->
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Style {
+    <link href="~/home/css/style.css" rel="stylesheet" />
+}

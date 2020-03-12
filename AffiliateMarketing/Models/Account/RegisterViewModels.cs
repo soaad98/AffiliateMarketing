@@ -1,9 +1,11 @@
-﻿using AffiliateMarketing.Models.CustomAttribute;
+﻿using AffiliateMarketing.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using static AffiliateMarketing.Models.Account.RegisterViewModels.MarRegisterViewModel;
+using static AffiliateMarketing.Models.ApplicationUser;
 
 namespace AffiliateMarketing.Models.Account.RegisterViewModels
 {
@@ -40,7 +42,9 @@ namespace AffiliateMarketing.Models.Account.RegisterViewModels
         public string OtherUrl { get; set; }
 
         [Display(Name = "الدولة")]
-        public string Country { get; set; }
+        public Country Country { get; set; }
+
+        //public string Country{ get; set; }
 
         [DataType(DataType.PostalCode)]
         [Display(Name = "zip code")]
@@ -48,6 +52,8 @@ namespace AffiliateMarketing.Models.Account.RegisterViewModels
 
         [UserName]
         [Display(Name = "اسم الشخصي")]
+        //[RegularExpression(@"^[a-zA-Z0-9''-'\s]$",
+        // ErrorMessage = "Characters are not allowed.")]
         [Required]
         public string Username { get; set; }
 
@@ -96,7 +102,9 @@ namespace AffiliateMarketing.Models.Account.RegisterViewModels
         public string City { get; set; }
 
         [Display(Name = "الدولة")]
-        public string Country { get; set; }
+        public Country Country { get; set; }
+
+        //public string Country { get; set; }
 
         [DataType(DataType.PostalCode)]
         [Display(Name = "zip code")]

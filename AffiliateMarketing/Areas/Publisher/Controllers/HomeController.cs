@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AffiliateMarketing.Areas.Publisher.Controllers
 {
-    [Area("Publisher")]
-    [Authorize(Roles = "Publisher")]
-    public class HomeController : Controller
+    public class HomeController : PublisherBaseController
     {
-        public IActionResult Index()
+        public  IActionResult Index()
         {
             return View();
         }

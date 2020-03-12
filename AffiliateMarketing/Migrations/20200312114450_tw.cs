@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AffiliateMarketing.Migrations
 {
-    public partial class test2 : Migration
+    public partial class tw : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,8 +43,9 @@ namespace AffiliateMarketing.Migrations
                     Address = table.Column<string>(nullable: true),
                     website = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: true),
-                    zip = table.Column<int>(nullable: false)
+                    Country = table.Column<int>(nullable: false),
+                    zip = table.Column<int>(nullable: false),
+                    Active = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -97,8 +98,8 @@ namespace AffiliateMarketing.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(nullable: false),
-                    ProviderKey = table.Column<string>(nullable: false),
+                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: false)
                 },
@@ -142,8 +143,8 @@ namespace AffiliateMarketing.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
-                    LoginProvider = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
+                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
+                    Name = table.Column<string>(maxLength: 128, nullable: false),
                     Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -151,6 +152,29 @@ namespace AffiliateMarketing.Migrations
                     table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
                     table.ForeignKey(
                         name: "FK_AspNetUserTokens_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "campaigns",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    UserId = table.Column<string>(nullable: false),
+                    Title = table.Column<string>(nullable: true),
+                    Summary = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Point = table.Column<int>(nullable: false),
+                    ImgUrl = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_campaigns", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_campaigns_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -240,6 +264,11 @@ namespace AffiliateMarketing.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_campaigns_UserId",
+                table: "campaigns",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_marchants_UserId",
                 table: "marchants",
                 column: "UserId",
@@ -268,6 +297,9 @@ namespace AffiliateMarketing.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "campaigns");
 
             migrationBuilder.DropTable(
                 name: "marchants");

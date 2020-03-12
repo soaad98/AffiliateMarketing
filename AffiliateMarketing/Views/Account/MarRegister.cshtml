@@ -2,87 +2,244 @@
 
 @{
     ViewData["Title"] = "MarRegister";
+    Layout = "_MainLayout";
 }
 
-<h1>MarRegister</h1>
+@*<form asp-action="MarRegister">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="CompanyName" class="control-label"></label>
+            <input asp-for="CompanyName" class="form-control" />
+            <span asp-validation-for="CompanyName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContactName" class="control-label"></label>
+            <input asp-for="ContactName" class="form-control" />
+            <span asp-validation-for="ContactName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="phone" class="control-label"></label>
+            <input asp-for="phone" class="form-control" />
+            <span asp-validation-for="phone" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="website" class="control-label"></label>
+            <input asp-for="website" class="form-control" />
+            <span asp-validation-for="website" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="control-label"></label>
+            <textarea asp-for="Address" class="form-control"></textarea>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="City" class="control-label"></label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Country"></label>
+            <select asp-for="Country" class="form-control" asp-items="@new SelectList(Enum.GetNames(typeof(Country)))">
+                <option selected disabled value="Select">Select Country</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="zip" class="control-label"></label>
+            <input asp-for="zip" class="form-control" />
+            <span asp-validation-for="zip" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Username" class="control-label"></label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword" class="control-label"></label>
+            <input asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>*@
 
-<h4>MarRegisterViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="MarRegister">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CompanyName" class="control-label"></label>
-                <input asp-for="CompanyName" class="form-control" />
-                <span asp-validation-for="CompanyName" class="text-danger"></span>
+
+<partial name="_NavPartial" />
+
+<div class="view" style="background-image: url('/sign-up-merchant/img/b.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="mask rgba-gradient align-items-center">
+        <div class="container">
+            <div class="row mt-4">
+                <!--Grid column-->
+                <div class="text-color col-md-12 text-center text-md-left">
+                    <h1 class="pt-5 text-center mt-5 h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Sign up as merchant right now! </h1>
+                    <hr class="text-center hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                    <h6 class="pb-3 text-center mb-3 wow fadeInLeft" data-wow-delay="0.3s">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga
+                        nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea
+                        dolor molestiae.
+                    </h6>
+                    <hr class="hr-light mb-3 mt-4">
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ContactName" class="control-label"></label>
-                <input asp-for="ContactName" class="form-control" />
-                <span asp-validation-for="ContactName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="phone" class="control-label"></label>
-                <input asp-for="phone" class="form-control" />
-                <span asp-validation-for="phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="website" class="control-label"></label>
-                <input asp-for="website" class="form-control" />
-                <span asp-validation-for="website" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <textarea asp-for="Address" class="form-control"></textarea>
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="zip" class="control-label"></label>
-                <input asp-for="zip" class="form-control" />
-                <span asp-validation-for="zip" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+
+<!-- Mask & flexbox options-->
+<!-- Content -->
+<div class="container">
+    <!--Grid row-->
+    <div class="row justify-content-center">
+
+        <!--Grid column-->
+        <div class="mt-5 col-md-6 col-xl-5 mb-4">
+
+
+
+            <div>
+                <i class="fas fa-briefcase icon-form"></i>
+                <!--                          <i class="fas fa-user icon-form"></i>-->
+                <label for="form1" class="text-form">Company name</label>
+                <input type="text" class=" form-control" id="form1">
+            </div>
+
+            <br>
+
+            <div>
+
+                <i class="fas fa-user icon-form"></i>
+                <label for="form2" class="text-form">User name</label>
+                <input type="text" class=" form-control" id="form2">
+            </div>
+
+            <br>
+
+            <div>
+
+                <i class="fas fa-envelope icon-form"></i>
+                <label for="form3" class="text-form">Your email</label>
+                <input type="email" class="form-control" id="form3">
+
+            </div>
+            <br>
+
+
+
+            <div>
+                <i class="fas fa-phone-alt icon-form"></i>
+                <label for="form4" class="text-form">Your phone</label>
+                <input type="password" class="form-control" id="form4">
+
+            </div>
+            <br>
+
+            <div>
+                <i class="fas fa-link icon-form"></i>
+                <label class="text-form" for="form5">Your website</label>
+                <input type="url" id="form5" class="form-control">
+            </div>
+            <br>
+
+            <div>
+                <i class="fas fa-map-marker-alt icon-form"></i>
+                <label class="text-form" for="form6">Your Address</label>
+                <input type="url" id="form6" class="form-control">
+            </div>
+            <br>
+        </div>
+
+
+        <div class="mt-5 col-md-6 col-xl-5 mb-4" style="margin-left: 20px">
+
+
+
+            <div>
+
+                <i class="fas fa-city icon-form"></i>
+                <label for="form7" class="text-form">City</label>
+                <input type="text" class=" form-control" id="form7">
+            </div>
+
+            <br>
+
+            <div>
+                <i class="fab fa-battle-net icon-form"></i>
+                <label for="form8" class="text-form">Country</label>
+                <input type="text" class=" form-control" id="form8">
+            </div>
+
+            <br>
+
+            <div>
+
+                <i class="fas fa-sort-numeric-up-alt icon-form"></i>
+                <label for="form9" class="text-form">ZIP</label>
+                <input type="text" class="form-control" id="form9">
+
+            </div>
+            <br>
+
+
+
+            <div>
+                <i class="fas fa-id-card-alt icon-form"></i>
+                <label for="form10" class="text-form">Contact name</label>
+                <input type="text" class="form-control" id="form10">
+
+            </div>
+            <br>
+
+            <div>
+                <i class="fas fa-lock icon-form"></i>
+                <label class="text-form" for="form11">Your password</label>
+                <input type="password" id="form11" class="form-control">
+            </div>
+            <br>
+
+            <div>
+
+                <i class="fas fa-lockicon-form"></i>
+                <label class="text-form" for="form12">confirm password</label>
+                <input type="password" id="form12" class="form-control">
+            </div>
+            <br>
+
+            <div class="text-center mt-4">
+                <button type="button" class="btn-lg btn-block btnSignIn"><span><strong>Sign in</strong></span></button>
+
+            </div>
+
+
+
+
+        </div>
+        <!--/.Form-->
+    </div>
+    <!--Grid column-->
 </div>
+<!--Grid row-->
+<!-- Content -->
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+}
+
+@section Style {
+    <link href="~/sign-up-merchant/css/style-sign-up.css" rel="stylesheet" />
 }

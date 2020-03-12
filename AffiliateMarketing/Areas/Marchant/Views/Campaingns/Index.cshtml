@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "ادارة الحملات الاعلانية";
+}
+
+
+<div class="card">
+    <div class="card-body">
+
+        <table class="table table-striped table-bordered table-hover" id="tblAjax">
+            <thead>
+                <tr>
+                    <th width="20%">
+                        عنوان الحملة
+                    </th>
+                    <th width="25%">
+                        ملخص عن الحملة
+                    </th>
+                    <th width="15%">
+                        وصف الحملة
+                    </th>
+                    <th width="15%">
+                        عدد نقاط الحملة
+                    </th>
+                    <th width="10%">
+                        رابط الصورة
+                    </th>
+                    <th width="15%"></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<!-- END EXAMPLE TABLE PORTLET-->
+
+@section scripts{
+
+    <!-- REQUIRED SCRIPTS -->
+    <script src="/Panel/plugins/jquery/jquery.min.js"></script>
+    <script src="/Panel/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="/Panel/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="/Panel/plugins/datatables/dataTables.bootstrap4.js"></script>
+    <!-- SlimScroll -->
+    <script src="/Panel/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="/Panel/plugins/fastclick/fastclick.js"></script>
+
+    <script>
+        $(function () {
+            BindDataTable();
+        });
+        //هذه تختلف حسب الصفحة
+        function BindDataTable() {
+            oTable = $('#tblAjax').dataTable(
+                {
+
+                    "language": {
+                        "sEmptyTable": "ليست هناك بيانات متاحة في الجدول",
+                        "sLoadingRecords": "جارٍ التحميل...",
+                        "sProcessing": "جارٍ التحميل...",
+                        "sLengthMenu": "أظهر _MENU_ مدخلات",
+                        "sZeroRecords": "لم يعثر على أية سجلات",
+                        "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                        "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                        "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                        "sInfoPostFix": "",
+                        "sSearch": "ابحث:",
+                        "sUrl": "",
+                        "oPaginate": {
+                            "sFirst": "الأول",
+                            "sPrevious": "السابق",
+                            "sNext": "التالي",
+                            "sLast": "الأخير"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
+                            "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+                        }
+                    },
+                    "iDisplayLength": 10,
+                    "bDestroy": false,
+                    "bSort": false,
+                    serverSide: true,
+                    columns: [
+
+                        { data: 'title', name: 'Title' },
+                        { data: 'summary', name: 'Summary' },
+                        { data: 'description', name: 'Description' },
+                        { data: 'point', name: 'Point' },
+
+
+                        {
+                            name: 'buttons', "render": function (data, type, row) {
+                                return `<a class="btn btn-danger" href=/CampaignUploads/${row["imgurl"]}> الصورة </a>`;
+                            }
+                        },
+
+                        {
+                            name: 'buttons', "render": function (data, type, row) {
+                                return `<a href='#'><i class="fa fa-edit"></i></a>` + `<a href='#'><i class="fa fa-trash"></i></a>` + `<a href='/marchant/Campaingns/details/${row["id"]}'><i class="fa fa-info"></i></a>`;
+                            }
+                        }
+                    ],
+                    ajax: {
+                        type: "POST",
+                        contentType: "application/json",
+                        url: '/Marchant/Campaingns/DTIndex',
+                        data: function (d) {
+                            return d;
+                        }
+                    }
+                });
+        }
+    </script>
+}
+
